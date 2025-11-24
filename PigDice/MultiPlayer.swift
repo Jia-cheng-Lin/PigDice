@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MultiPlayer.swift
 //  PigDice
 //
 //  Created by 林嘉誠 on 2025/11/13.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MultiPlayer: View {
     // 遊戲設定（Target Score 可調整與持久化）
     @AppStorage("targetScore") private var targetScore: Double = 100
 
@@ -388,6 +388,7 @@ struct ContentView: View {
                             }
                         }
                         .padding(.top, 8)
+                        .padding(.bottom, 30)
                     }
                     .frame(maxWidth: contentMaxWidth)
                     .padding(.horizontal, horizontalPadding)
@@ -1124,7 +1125,7 @@ private struct SettingsView: View {
     @Binding var aiRollDuration: Double
     @Binding var backgroundOpacity: Double
     @Binding var targetScore: Double
-    @Binding var versusMode: ContentView.VersusMode
+    @Binding var versusMode: MultiPlayer.VersusMode
 
     var onResetRecords: () -> Void
     var onApply: () -> Void
@@ -1278,5 +1279,5 @@ private struct SettingsView: View {
 }
 
 #Preview {
-    ContentView()
+    MultiPlayer()
 }
